@@ -16,21 +16,18 @@
     
     <script src="js/test.js" defer></script>
     <script type="text/javascript" src="js/data_type.js"></script>
-    <script type="text/javascript" src="js/search.js"></script>
-    <script type="text/javascript" src="js/pop_up.js"></script>
 
 
     <!-- defer은 js파일먼저 로드시키겠다는것. -->
     <script src="js/search.js" defer></script>
 
-    <script type="text/javascript" src="js/pop_up.js"></script>
+    <script type="text/javascript" src="js/pop_up.js" defer></script>
 
-    <script src="js/pop_up.js" defer></script>
-
+<!-- 연동되어있고 -->
 
     <!-- 무조건 js파일 연결해줘야 개발자 도구 콘솔에서 확인 할 수 있음 -->
     ///defer 붙여줘야 오류 안난다고 함.
-    <style>
+    <style>AQ3
 table{font-size:20pt;
 color:white;}
 
@@ -70,6 +67,9 @@ color:white;}
 
             
           </nav>
+
+          <p>이 문장은 <u>밑줄이 있는 DDDDDDD텍스트</u>를 포함하고 있습니다.</p>
+
           <a class="navbar-brand" href="#">홈페이지</a>
           
 <!-- 부트스트랩 코드 복사한거임 -->
@@ -103,11 +103,19 @@ color:white;}
               </li>
               <form class="d-flex" role="search" onsubmit="return googleSearch();">
                 <input class="form-control me-2" id="search_input" name="q" type="search" placeholder="키워드 입력" aria-label="Search">
+
                 <button class="btn btn-outline-success" id="search_btn" type="submit">검색하기</button>
-                </form>
-  
-            </ul>
+
+            <b>로그인</b>
+            <a href="login/login.html" class="btn btn-outline-success" id="login_btn">로그인 하기</a>
             
+          
+          </form>  
+            </ul> 
+
+
+
+
           <!-- 오른쪽 검색창 띄움  소스 긁어온것임 부트 스트랩에서-->
           </div>
           <div class="mb-3">
@@ -196,6 +204,7 @@ color:white;}
 <div style ="display: flex; justify-content: center;">
  
 </div>
+<h1 class="display-4"><div id="Time" class="clock"></div></h1>
 
 </body>
 
