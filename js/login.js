@@ -195,3 +195,15 @@ if (sessionStorage) {
                                                         alert("세션 스토리지 지원 x");
                                                         }
                                                         }
+
+                                                  function addJavascript(jsname) { // 자바스크립트 외부 연동
+                                                            var th = document.getElementsByTagName('head')[0];
+                                                            var s = document.createElement('script');
+                                                            s.setAttribute('type','text/javascript');
+                                                            s.setAttribute('src',jsname);
+                                                            th.appendChild(s);
+                                                        }
+                                                  //      addJavascript('/js/security.js'); // 암복호화 함수
+                                                    //    addJavascript('/js/session.js'); // 세션 함수
+                                                      //  addJavascript('/js/cookie.js'); // 쿠키 함수    
+                                                        //교수님이 중복되서 실행되면 오류날수 있다고 했다. 즉 

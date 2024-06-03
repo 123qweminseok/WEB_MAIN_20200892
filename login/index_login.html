@@ -1,4 +1,4 @@
-<!-- 이 부분은 주석문입니다 -->
+<!-- 해당 부분은 로그인 이후 띄우지는 창. 로그아웃 창이 핵심 기능임 -->
 
 <html>
 
@@ -16,6 +16,8 @@
 
     <link rel="stylesheet" href="../css/login.css">
     <script src="../js/login.js" defer></script>
+    <script src="../js/logout.js" defer></script>
+    <!-- 해당 파일을 연결을 안해서 오류가 떳다.  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js" integrity="sha512-a+SUDuwNzXDvz4XrIcXHuCf089/iJAoN4lmrXJg18XnduKK6YlDHNRalv4yd1N40OKI80tFidF+rqTFKGPoWFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!-- 상대경로, 절대경로 제일 밖에니까..로 해주고css폴더 안에 해당 파일 -->
 
@@ -52,11 +54,12 @@ color:white;}
   
               <div class="mb-md-5 mt-md-4 pb-5">
   
-                <h2 class="fw-bold mb-2 text-uppercase">로그아웃</h2>
+                <h2 class="fw-bold mb-2 text-uppercase" id="logoutt">로그아웃</h2>
                 <p class="text-white-50 mb-5">이메일 형식의 아이디와 패스워드를 입력해주세요</p>
   
                 <button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-light btn-lg px-5" id="logout_btn" type="button">로그아웃</button>
-                <!-- 여기 버튼을 누르면 로그인 창으로 -->
+                <!-- 여기 버튼을 누르면 로그인 창으로 !!!-->
+                <!-- 해당 창이 로그아웃 버튼임!! 이 버튼 누르면 로그인 창으로 돌아가야함. -->
 
 
 
