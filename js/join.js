@@ -1,39 +1,45 @@
+// join.js
+
 class SignUp {
-    constructor(firstName, lastName, birthdayDate, gender, emailAddress, phoneNumber, classNumber, random) { // 생성자 함수
+  constructor(firstName, birthdayDate, gender, classNumber, registrationCode) {
       this.firstName = firstName;
-      this.lastName = lastName;
       this.birthdayDate = birthdayDate;
       this.gender = gender;
-      this.emailAddress = emailAddress;
-      this.phoneNumber = phoneNumber;
       this.classNumber = classNumber;
-      this.random = random;
-    }
-    get fullName() {
-        return `${this.firstName} ${this.lastName}`; // 템플릿 리터럴 문자열 연결, 기존에는 + 연산자로 연결
-      }
-    
-      set fullName(fullName) {
-        const [firstName, lastName] = fullName.split(" ");
-        this.firstName = firstName;
-        this.lastName = lastName;
-      }
-    
-      get contactInfo() {
-        return `${this.emailAddress} ${this.phoneNumber} ${this.random}`; // 요소 하나 하나를 객체 프로퍼티라고 한다.
-      }
-    
-      set contactInfo(contactInfo) {
-        const [emailAddress, phoneNumber, random] = contactInfo.split(" ");
-        this.emailAddress = emailAddress;
-        this.phoneNumber = phoneNumber;
-        this.random = random;
-          
-      }
-    }
-  
-function join(){ // 회원가입
-    }
+      this.registrationCode = registrationCode;
+  }
 
+  get fullName() {
+      return `${this.firstName}`;
+  }
 
-    
+  set fullName(fullName) {
+      this.firstName = fullName;
+  }
+
+  get contactInfo() {
+      return `${this.registrationCode}`;
+  }
+
+  set contactInfo(contactInfo) {
+      this.registrationCode = contactInfo;
+  }
+}
+
+function handleSubmit() {
+  const firstName = document.querySelector("#form3Example1q").value;
+  const birthdayDate = document.querySelector("#exampleDatepicker1").value;
+  const genderSelect = document.querySelector("select[data-mdb-select-init]");
+  const gender = genderSelect.options[genderSelect.selectedIndex].text;
+  const classSelect = document.querySelector("select[data-mdb-select-init]");
+  const classNumber = classSelect.options[classSelect.selectedIndex].text;
+  const registrationCode = document.querySelector("#form3Example1w").value;
+
+  const newSignUp = new SignUp(firstName, birthdayDate, gender, classNumber, registrationCode);
+
+  // For demonstration, log the object
+  console.log(newSignUp);
+
+  // Redirect to join_end.html
+  location.href = '/login/join_end.html';
+}
