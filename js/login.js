@@ -19,7 +19,10 @@ const check_input = () => {
     if (emailValue.length < 5) {
         alert('아이디는 최소 5글자 이상 입력해야합니다.');
         return false;
+    
     }
+
+    // 해당 파트가 8주차 응용문제 해결입니다!아이디 5글자이상, 비번 12글자 이상 패스워드 특수문자 1개이상 퐇마,.
 
     if (passwordValue.length < 12) {
         alert('비밀번호는 반드시 12글자 이상 입력해야합니다.');
