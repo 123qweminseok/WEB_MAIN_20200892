@@ -1,5 +1,62 @@
+class SignUp {
+  constructor(firstName, lastName, birthdayDate, gender, emailAddress, phoneNumber, classNumber, random) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.birthdayDate = birthdayDate;
+      this.gender = gender;
+      this.emailAddress = emailAddress;
+      this.phoneNumber = phoneNumber;
+      this.classNumber = classNumber;
+      this.random = random;
+  }
 
+  get fullName() {
+      return `${this.firstName} ${this.lastName}`;
+  }
 
+  set fullName(fullName) {
+      const [firstName, lastName] = fullName.split(" ");
+      this.firstName = firstName;
+      this.lastName = lastName;
+  }
+
+  get contactInfo() {
+      return `${this.emailAddress} ${this.phoneNumber}`;
+  }
+
+  set contactInfo(contactInfo) {
+      const [emailAddress, phoneNumber] = contactInfo.split(" ");
+      this.emailAddress = emailAddress;
+      this.phoneNumber = phoneNumber;
+  }
+}
+
+function handleSubmit() {
+  const firstName = document.querySelector("#form3Example1q").value;
+  const birthdayDate = document.querySelector("#exampleDatepicker1").value;
+  const genderSelect = document.querySelector("select[data-mdb-select-init]");
+  const gender = genderSelect.options[genderSelect.selectedIndex].text;
+  const classSelect = document.querySelector("select[data-mdb-select-init]");
+  const classNumber = classSelect.options[classSelect.selectedIndex].text;
+  const registrationCode = document.querySelector("#form3Example1w").value;
+
+  const newSignUp = new SignUp(firstName, birthdayDate, gender, classNumber, registrationCode);
+
+  console.log(newSignUp);
+
+  session_join_set(newSignUp);
+
+  location.href = '/login/join_end.html';
+}
+
+// Simple encryption and decryption using Base64 encoding
+function encrypt_text(text) {
+  return btoa(text);
+}
+
+function decrypt_text(text) {
+  return atob(text);
+}
 
 function session_join_set(newSignUp) {
   if (sessionStorage) {
