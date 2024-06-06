@@ -14,11 +14,28 @@
     <script src="../js/logout.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js" integrity="sha512-a+SUDuwNzXDvz4XrIcXHuCf089/iJAoN4lmrXJg18XnduKK6YlDHNRalv4yd1N40OKI80tFidF+rqTFKGPoWFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <style>
-        table { font-size: 20pt; color: white; }
+        body {
+            background-color: #f0f0f0; /* 밝은 회색 배경색 */
+            color: #333; /* 글꼴 색상을 어두운 회색으로 변경 */
+        }
+        table { 
+            font-size: 20pt; 
+            color: white; 
+        }
+        .btn-outline-light {
+            background-color: #007bff; /* 파란색 배경 */
+            color: #fff; /* 흰색 글꼴 */
+            border-color: #007bff; /* 파란색 테두리 */
+        }
+        .btn-outline-light:hover {
+            background-color: #0056b3; /* 더 진한 파란색 배경 */
+            color: #fff; /* 흰색 글꼴 */
+            border-color: #0056b3; /* 더 진한 파란색 테두리 */
+        }
     </style>
     <title>LoL 메인화면</title>
 </head>
-<body class="text-center" onload="init();" style="background-color: black;">
+<body class="text-center" onload="init();">
     <h1>로그인 페이지
         <form id="login_form" method="get" action="login/index_login.html">
     </h1>
@@ -50,7 +67,6 @@
                             <div>
                                 <p class="mb-0">Don't have an account? <a href="#!" class="text-white-50 fw-bold">로그인</a></p>
                             </div>
-                        </form>
                         </div>
                     </div>
                 </div>
@@ -63,7 +79,6 @@
             <input type="checkbox" value="remember-me" id="idSaveCheck"> 아이디 기억
         </label>
     </div>
-
     <script>
         let logoutTimer;
 
@@ -84,18 +99,7 @@
             document.addEventListener('click', resetLogoutTimer);
             resetLogoutTimer(); // 타이머 시작
         }
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+
  
  
  
